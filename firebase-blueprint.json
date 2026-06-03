@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "PortfolioAsset": {
+      "title": "Portfolio Asset",
+      "description": "Customized image for a specific section of the portfolio",
+      "type": "object",
+      "properties": {
+        "val": {
+          "type": "string",
+          "description": "Base64 data URL string representing the compressed image"
+        }
+      },
+      "required": ["val"]
+    }
+  },
+  "firestore": {
+    "/portfolio_assets/{documentId}": {
+      "schema": "PortfolioAsset",
+      "description": "Individual customized dynamic asset for the portfolio labeled under its specific document ID"
+    }
+  }
+}

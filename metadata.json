@@ -1,0 +1,6 @@
+{
+  "name": "Precious Lara Portfolio",
+  "description": "Digital portfolio of Precious Lara L. Degoma, BSEd Biology student at MSU-IIT, showcasing technology in education, teacher learning artifacts, philosophy, school profile, and course achievements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

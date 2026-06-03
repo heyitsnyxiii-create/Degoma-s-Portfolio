@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner() {
+      return isSignedIn() && 
+             request.auth.token.email == "heyitsnyxiii@gmail.com" && 
+             request.auth.token.email_verified == true;
+    }
+
+    match /portfolio_assets/{documentId} {
+      allow read: if true;
+      allow write: if isOwner() && isValidId(documentId);
+    }
+  }
+}
