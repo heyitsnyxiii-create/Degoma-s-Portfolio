@@ -185,12 +185,10 @@ export function FadeInText({ text, className = "", delay = 0, once = true }: { t
   const wordVariants = {
     hidden: { 
       opacity: 0, 
-      y: 10,
       filter: 'blur(2px)'
     },
     visible: { 
       opacity: 1, 
-      y: 0,
       filter: 'blur(0px)',
       transition: {
         duration: 0.6,
@@ -211,7 +209,7 @@ export function FadeInText({ text, className = "", delay = 0, once = true }: { t
         <React.Fragment key={idx}>
           <motion.span
             variants={wordVariants}
-            className="inline-block"
+            className="inline"
           >
             {word}
           </motion.span>

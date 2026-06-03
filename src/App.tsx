@@ -1010,19 +1010,21 @@ export default function App() {
             </div>
 
             {/* Elegant supportive statement block - sized submissively to avoid competing with main title */}
-            <div className="bg-[#FDFCF9] border border-[#2C2C2C]/10 rounded-xl py-6 px-6 text-center shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
-              <div className="max-w-xl mx-auto space-y-1.5">
-                <span className="text-[#5A5A40] font-mono text-[10px] tracking-[0.25em] uppercase font-bold">The Educator's Core Motto</span>
-                <p className="text-[#1A1A1A] font-serif text-xl md:text-2xl font-extrabold italic tracking-tight leading-snug">
-                  "Making Science Click—Together."
-                </p>
-                <div className="flex justify-center items-center space-x-2 pt-1">
-                  <div className="w-8 h-[1px] bg-[#5A5A40]/20"></div>
-                  <span className="text-[#5A5A40] font-sans text-[10px] font-semibold tracking-wider uppercase">Interactive • Accessible • Inspiring</span>
-                  <div className="w-8 h-[1px] bg-[#5A5A40]/20"></div>
+            <ScrollRevealBox yOffset={20} delay={0.1}>
+              <div className="bg-[#FDFCF9] border border-[#2C2C2C]/10 rounded-xl py-6 px-6 text-center shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
+                <div className="max-w-xl mx-auto space-y-1.5">
+                  <span className="text-[#5A5A40] font-mono text-[10px] tracking-[0.25em] uppercase font-bold">The Educator's Core Motto</span>
+                  <p className="text-[#1A1A1A] font-serif text-xl md:text-2xl font-extrabold italic tracking-tight leading-snug">
+                    "Making Science Click—Together."
+                  </p>
+                  <div className="flex justify-center items-center space-x-2 pt-1">
+                    <div className="w-8 h-[1px] bg-[#5A5A40]/20"></div>
+                    <span className="text-[#5A5A40] font-sans text-[10px] font-semibold tracking-wider uppercase">Interactive • Accessible • Inspiring</span>
+                    <div className="w-8 h-[1px] bg-[#5A5A40]/20"></div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollRevealBox>
 
             {/* Master Introduction Profile Area (Clean Minimalist Grid) */}
             <ScrollRevealBox yOffset={25}>
@@ -1036,13 +1038,14 @@ export default function App() {
                         <TypewriterScrollText text="Hello, I'm Precious Lara!" delay={0.2} />
                       </h2>
                     </div>
-                    <p className="text-[#2C2C2C]/90 font-sans text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose tracking-wide">
-                      <span className="float-left text-5xl md:text-6xl font-serif font-black mr-3 mt-1.5 text-[#5A5A40] leading-none">I</span>
-                      am a Biology Education student at MSU-IIT with a passion for creating learning experiences that spark curiosity rather than rely on memorization. I am particularly interested in how technology can make science more interactive, meaningful, and accessible to students.
-                    </p>
-                    <p className="text-[#2C2C2C]/90 font-sans text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose tracking-wide">
-                      This portfolio showcases digital projects, instructional materials, and collaborative outputs developed throughout my academic journey. Through these works, I aim to create engaging and meaningful learning experiences that make science more accessible to students.
-                    </p>
+                    <FadeInText 
+                      className="text-[#2C2C2C]/90 font-sans text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose tracking-wide"
+                      text="I am a Biology Education student at MSU-IIT with a passion for creating learning experiences that spark curiosity rather than rely on memorization. I am particularly interested in how technology can make science more interactive, meaningful, and accessible to students."
+                    />
+                    <FadeInText 
+                      className="text-[#2C2C2C]/90 font-sans text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose tracking-wide"
+                      text="This portfolio showcases digital projects, instructional materials, and collaborative outputs developed throughout my academic journey. Through these works, I aim to create engaging and meaningful learning experiences that make science more accessible to students."
+                    />
                   </div>
                   
                   <div className="pt-2">
@@ -1392,40 +1395,24 @@ export default function App() {
                     <div className="space-y-5">
                       {activeAckId === 'mentor' && (
                         <div className="space-y-6 text-[#2C2C2C] italic font-serif text-sm md:text-base leading-relaxed">
-                          <p className="indent-8 text-stone-750">
-                            To my professor and portfolio adviser, <strong>{ACKNOWLEDGMENTS.mentor.name}</strong> — thank you for showing me how biology and technology can join together. You taught us to look beyond simple lectures and push our boundaries as future educators.
-                          </p>
-                          <p className="indent-8 text-stone-750">
-                            This technology portfolio is the direct result of all those discussions in class, your feedback, and the standards you set for us. Under your guidance, I learned how to build lessons that actually keep high schoolers curious.
-                          </p>
-                          <p className="indent-8 text-stone-750">
-                            Your lessons on patience and thorough preparation have been our best anchor. I'll carry these practices with me to my future classrooms. Thank you for your guidance.
-                          </p>
+                          <FadeInText text={`To my professor and portfolio adviser, ${ACKNOWLEDGMENTS.mentor.name} — thank you for showing me how biology and technology can join together. You taught us to look beyond simple lectures and push our boundaries as future educators.`} className="indent-8 text-stone-750" />
+                          <FadeInText text="This technology portfolio is the direct result of all those discussions in class, your feedback, and the standards you set for us. Under your guidance, I learned how to build lessons that actually keep high schoolers curious." className="indent-8 text-stone-750" />
+                          <FadeInText text="Your lessons on patience and thorough preparation have been our best anchor. I'll carry these practices with me to my future classrooms. Thank you for your guidance." className="indent-8 text-stone-750" />
                         </div>
                       )}
 
                       {activeAckId === 'family' && (
                         <div className="space-y-6 text-[#2C2C2C] italic font-serif text-sm md:text-base leading-relaxed">
-                          <p className="indent-8 text-stone-750">
-                            To my parents and family, who never doubted me once—thank you for being my constant foundation.
-                          </p>
-                          <p className="indent-8 text-stone-750">
-                            Helping out with our family business and retail duties taught me more about endurance, hard work, and dealing with challenges than any schoolbook. You showed me what genuine dedication looks like in real time, day after day.
-                          </p>
-                          <p className="indent-8 text-stone-750">
-                            Thank you for accepting my schedule, the continuous encouragement, and the quiet support when university life felt completely overwhelming. This milestone is yours as much as it is mine.
-                          </p>
+                          <FadeInText text="To my parents and family, who never doubted me once—thank you for being my constant foundation." className="indent-8 text-stone-750" />
+                          <FadeInText text="Helping out with our family business and retail duties taught me more about endurance, hard work, and dealing with challenges than any schoolbook. You showed me what genuine dedication looks like in real time, day after day." className="indent-8 text-stone-750" />
+                          <FadeInText text="Thank you for accepting my schedule, the continuous encouragement, and the quiet support when university life felt completely overwhelming. This milestone is yours as much as it is mine." className="indent-8 text-stone-750" />
                         </div>
                       )}
 
                       {activeAckId === 'community' && (
                         <div className="space-y-6 text-[#2C2C2C] italic font-serif text-sm md:text-base leading-relaxed">
-                          <p className="indent-8 text-stone-750">
-                            To my fellow classmates in the 2nd Year BSEd Biology program at <strong>MSU-IIT</strong> — thank you for the shared slide decks, the quick review sessions, the laughs, and for keeping each other sane during stressful weeks.
-                          </p>
-                          <p className="indent-8 text-stone-750">
-                            I am also incredibly grateful to the Almighty, who gave me strength and peace of mind when my resources ran thin. This portfolio is a small prayer of thanks for the grace that saw me through.
-                          </p>
+                          <FadeInText text="To my fellow classmates in the 2nd Year BSEd Biology program at MSU-IIT — thank you for the shared slide decks, the quick review sessions, the laughs, and for keeping each other sane during stressful weeks." className="indent-8 text-stone-750" />
+                          <FadeInText text="I am also incredibly grateful to the Almighty, who gave me strength and peace of mind when my resources ran thin. This portfolio is a small prayer of thanks for the grace that saw me through." className="indent-8 text-stone-750" />
                         </div>
                       )}
                     </div>
@@ -1477,6 +1464,7 @@ export default function App() {
             </div>
 
             {/* Grid 1: Broad Institutional Showcase (PAMANTASAN & FACULTY VANGUARD) */}
+            <ScrollRevealBox yOffset={25}>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
               
               {/* Left Column: Campus Fast-Facts & Crest Accent */}
@@ -1532,8 +1520,10 @@ export default function App() {
                 </div>
               </div>
             </div>
+            </ScrollRevealBox>
 
             {/* Strategic Spot: CED wide horizontal container */}
+            <ScrollRevealBox yOffset={30}>
             <div className="bg-[#FDFCF9] border border-[#2C2C2C]/10 rounded-2xl p-6 md:p-8 shadow-[0_1px_3px_rgba(0,0,0,0.015)] grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-8 space-y-4">
                 <div className="flex items-center space-x-3">
@@ -1626,8 +1616,10 @@ export default function App() {
                 </div>
               </div>
             </div>
+            </ScrollRevealBox>
 
             {/* Strategic Blueprint Layout: Quad-Grid showing VMGO (Vision, Mission, Philosophy & Values) */}
+            <ScrollRevealBox yOffset={30}>
             <div className="space-y-6">
               <div className="text-center space-y-1">
                 <span className="text-[#5A5A40] font-mono text-xs tracking-[0.2em] uppercase font-bold block">The Strategic Charter</span>
@@ -1770,6 +1762,7 @@ export default function App() {
                 })}
               </div>
             </div>
+            </ScrollRevealBox>
 
           </motion.div>
         )}
@@ -1792,6 +1785,7 @@ export default function App() {
             </div>
 
             {/* Split Composition: visual story on left, elegant beliefs on right */}
+            <ScrollRevealBox yOffset={25}>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
               
               {/* Left Plate: Immersive visual snapshot & personal quote */}
@@ -1856,9 +1850,7 @@ export default function App() {
                           </h4>
                         </div>
 
-                        <p className="text-stone-700 font-serif text-sm md:text-base leading-relaxed text-justify italic pl-2 border-l border-stone-200/50">
-                          {pillar.text}
-                        </p>
+                        <FadeInText text={pillar.text} className="text-stone-700 font-serif text-sm md:text-base leading-relaxed text-justify italic pl-2 border-l border-stone-200/50" />
                       </div>
                     );
                   })}
@@ -1867,6 +1859,7 @@ export default function App() {
               </div>
 
             </div>
+            </ScrollRevealBox>
           </motion.div>
         )}
 
@@ -2462,33 +2455,35 @@ export default function App() {
             exit="exit"
             className="space-y-8 text-[#2C2C2C] w-full"
           >
-            <InteractiveReferences 
-              imagesFolder={REFERENCES_LINKS.imagesFolder}
-              citationsFolder={REFERENCES_LINKS.citationsFolder}
-            />
+            <ScrollRevealBox yOffset={25}>
+              <InteractiveReferences 
+                imagesFolder={REFERENCES_LINKS.imagesFolder}
+                citationsFolder={REFERENCES_LINKS.citationsFolder}
+              />
 
-            {/* Presentation details segment */}
-            <div className="max-w-4xl mx-auto space-y-4 animate-fade-in text-[#2C2C2C]">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-white border-2 border-black rounded-xl p-4 md:p-5 hover:border-[#5A5A40]/30 hover:bg-[#FAF8F3] transition-all shadow-[2px_2px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_rgba(0,0,0,1)]">
-                  <span className="block text-[9px] uppercase font-mono tracking-wider text-[#5A5A40] font-bold">Presented To</span>
-                  <span className="font-serif text-[#1A1A1A] font-black text-sm">Prof. Rizalina G. Gomez</span>
+              {/* Presentation details segment */}
+              <div className="mt-8 max-w-4xl mx-auto space-y-4 animate-fade-in text-[#2C2C2C]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-white border-2 border-black rounded-xl p-4 md:p-5 hover:border-[#5A5A40]/30 hover:bg-[#FAF8F3] transition-all shadow-[2px_2px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+                    <span className="block text-[9px] uppercase font-mono tracking-wider text-[#5A5A40] font-bold">Presented To</span>
+                    <span className="font-serif text-[#1A1A1A] font-black text-sm">Prof. Rizalina G. Gomez</span>
+                  </div>
+                  <div className="bg-white border-2 border-black rounded-xl p-4 md:p-5 hover:border-[#5A5A40]/30 hover:bg-[#FAF8F3] transition-all shadow-[2px_2px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+                    <span className="block text-[9px] uppercase font-mono tracking-wider text-[#5A5A40] font-bold">Presented By</span>
+                    <span className="font-serif text-[#1A1A1A] font-black text-sm">Precious Lara L. Degoma</span>
+                  </div>
                 </div>
-                <div className="bg-white border-2 border-black rounded-xl p-4 md:p-5 hover:border-[#5A5A40]/30 hover:bg-[#FAF8F3] transition-all shadow-[2px_2px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_rgba(0,0,0,1)]">
-                  <span className="block text-[9px] uppercase font-mono tracking-wider text-[#5A5A40] font-bold">Presented By</span>
-                  <span className="font-serif text-[#1A1A1A] font-black text-sm">Precious Lara L. Degoma</span>
+                <div className="p-4 bg-white rounded-xl text-center text-xs font-mono text-[#5A5A40] border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,1)] space-y-1">
+                  <div>
+                    <span className="font-bold text-[#2C2C2C] uppercase mr-1.5">Course and Section:</span> 
+                    Technology for Teaching and Learning 1 Laboratory - T78
+                  </div>
+                  <div className="text-[11px] text-[#2C2C2C]/70 font-serif italic font-semibold text-stone-600">
+                    Mindanao State University - Iligan Institute of Technology
+                  </div>
                 </div>
               </div>
-              <div className="p-4 bg-white rounded-xl text-center text-xs font-mono text-[#5A5A40] border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,1)] space-y-1">
-                <div>
-                  <span className="font-bold text-[#2C2C2C] uppercase mr-1.5">Course and Section:</span> 
-                  Technology for Teaching and Learning 1 Laboratory - T78
-                </div>
-                <div className="text-[11px] text-[#2C2C2C]/70 font-serif italic font-semibold text-stone-600">
-                  Mindanao State University - Iligan Institute of Technology
-                </div>
-              </div>
-            </div>
+            </ScrollRevealBox>
           </motion.div>
         )}
         </AnimatePresence>
