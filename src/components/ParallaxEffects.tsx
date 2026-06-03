@@ -169,6 +169,59 @@ export function ScrollRevealBox({
   );
 }
 
+export function FadeInText({ text, className = "", delay = 0, once = true }: { text: string, className?: string, delay?: number, once?: boolean }) {
+  const words = text.split(" ");
+  
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.04,
+        delayChildren: delay,
+      }
+    }
+  };
+  
+  const wordVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 10,
+      filter: 'blur(2px)'
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      filter: 'blur(0px)',
+      transition: {
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1]
+      }
+    }
+  };
+
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: once, amount: 0.1 }}
+      className={className}
+    >
+      {words.map((word, idx) => (
+        <React.Fragment key={idx}>
+          <motion.span
+            variants={wordVariants}
+            className="inline-block"
+          >
+            {word}
+          </motion.span>
+          {idx < words.length - 1 && ' '}
+        </React.Fragment>
+      ))}
+    </motion.div>
+  );
+}
+
 /**
  * Decorative floating SVG elements representing biology (cells, molecules, leaves) that follow parallax scrolling.
  */

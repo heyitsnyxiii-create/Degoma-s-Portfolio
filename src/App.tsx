@@ -76,6 +76,7 @@ import demoTeachingSession3 from './assets/images/demo_teaching_session_3_178047
 import msuIitCedPhoto from './assets/images/msu_iit_ced_1780481118572.png';
 import { compressBase64, compressImageFile } from './utils/imageCompressor';
 import { 
+  FadeInText,
   TypewriterScrollText, 
   ParallaxFloat, 
   ScrollRevealBox, 
@@ -1188,19 +1189,13 @@ export default function App() {
                 </div>
                 
                 {/* Paragraph 1 */}
-                <p className="font-serif text-[#2C2C2C] text-sm md:text-base leading-relaxed text-justify">
-                  I’ve always believed that science should be experienced, not just memorized. My time at MSU-IIT has been focused on finding ways to take complex biology concepts out of textbooks and turn them into interactive, hands-on lessons. I want to use technology to make sure every student, regardless of how they learn, feels capable of discovery.
-                </p>
+                <FadeInText text="I’ve always believed that science should be experienced, not just memorized. My time at MSU-IIT has been focused on finding ways to take complex biology concepts out of textbooks and turn them into interactive, hands-on lessons. I want to use technology to make sure every student, regardless of how they learn, feels capable of discovery." className="font-serif text-[#2C2C2C] text-sm md:text-base leading-relaxed text-justify" />
 
                 {/* Paragraph 2 */}
-                <p className="font-serif text-[#2C2C2C] text-sm md:text-base leading-relaxed text-justify">
-                  While maintaining consistent honors keeps me grounded in lab work and theory, my real-world education happened in our family's retail business. Balancing school while helping run a business taught me practical discipline, fast problem-solving, and how to connect with people from all walks of life—skills I carry directly into my training as a future teacher.
-                </p>
+                <FadeInText text="While maintaining consistent honors keeps me grounded in lab work and theory, my real-world education happened in our family's retail business. Balancing school while helping run a business taught me practical discipline, fast problem-solving, and how to connect with people from all walks of life—skills I carry directly into my training as a future teacher." className="font-serif text-[#2C2C2C] text-sm md:text-base leading-relaxed text-justify" />
 
                 {/* Paragraph 3 */}
-                <p className="font-serif text-[#2C2C2C] text-sm md:text-base leading-relaxed text-justify">
-                  As an aspiring educator, I live for the moment when a difficult concept finally "clicks" for a student. My ultimate goal is to create inclusive classrooms where scientific inquiry feels natural, exciting, and accessible to everyone.
-                </p>
+                <FadeInText text="As an aspiring educator, I live for the moment when a difficult concept finally 'clicks' for a student. My ultimate goal is to create inclusive classrooms where scientific inquiry feels natural, exciting, and accessible to everyone." className="font-serif text-[#2C2C2C] text-sm md:text-base leading-relaxed text-justify" />
 
                 {/* Biology core badges */}
                 <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-[11px] text-[#2C2C2C]/80">
@@ -1649,9 +1644,7 @@ export default function App() {
                     <span className="inline-flex items-center text-[9px] font-mono font-bold tracking-wider text-amber-700 bg-amber-500/10 px-2.5 py-1 rounded">
                       INSTITUTIONAL VISION
                     </span>
-                    <p className="font-serif italic text-stone-750 font-normal leading-relaxed text-sm md:text-base text-stone-800">
-                      {SCHOOL_PROFILE.vmgo.vision}
-                    </p>
+                    <FadeInText text={SCHOOL_PROFILE.vmgo.vision} className="font-serif italic text-stone-750 font-normal leading-relaxed text-sm md:text-base text-stone-800" />
                   </div>
                   <div className="text-[10px] font-mono text-stone-400">Determined Pursuits</div>
                 </div>
@@ -1662,9 +1655,7 @@ export default function App() {
                     <span className="inline-flex items-center text-[9px] font-mono font-bold tracking-wider text-blue-700 bg-blue-500/10 px-2.5 py-1 rounded">
                       CORE MISSION
                     </span>
-                    <p className="font-serif italic text-stone-750 font-normal leading-relaxed text-sm md:text-base text-stone-800">
-                      {SCHOOL_PROFILE.vmgo.mission}
-                    </p>
+                    <FadeInText text={SCHOOL_PROFILE.vmgo.mission} className="font-serif italic text-stone-750 font-normal leading-relaxed text-sm md:text-base text-stone-800" />
                   </div>
                   <div className="text-[10px] font-mono text-stone-400">Empowering Communities</div>
                 </div>
@@ -1675,9 +1666,7 @@ export default function App() {
                     <span className="inline-flex items-center text-[9px] font-mono font-bold tracking-wider text-[#5A5A40] bg-[#5A5A40]/10 px-2.5 py-1 rounded">
                       EDUCATIONAL PHILOSOPHY
                     </span>
-                    <p className="font-serif text-stone-700 text-sm leading-relaxed text-stone-800 text-justify">
-                      {SCHOOL_PROFILE.vmgo.philosophy}
-                    </p>
+                    <FadeInText text={SCHOOL_PROFILE.vmgo.philosophy} className="font-serif text-stone-700 text-sm leading-relaxed text-stone-800 text-justify" />
                   </div>
                   <div className="text-[10px] font-mono text-stone-400">Multicultural Learning</div>
                 </div>
@@ -1835,9 +1824,7 @@ export default function App() {
                     <span className="w-1.5 h-1.5 rounded-full bg-[#801b1b]"></span>
                     <span className="font-mono text-[10px] uppercase tracking-widest font-bold">EDUCATOR'S MANIFESTO</span>
                   </div>
-                  <p className="font-serif italic text-stone-700 text-sm leading-relaxed text-justify">
-                    My mission is to transform the classroom into an active, breathing habitat. Science should never be a catalog of static facts to memorize, but a continuous journey of active discovery and inquiry based research. Through curiosity and hands on learning, we build understanding together.
-                  </p>
+                  <FadeInText text="My mission is to transform the classroom into an active, breathing habitat. Science should never be a catalog of static facts to memorize, but a continuous journey of active discovery and inquiry based research. Through curiosity and hands on learning, we build understanding together." className="font-serif italic text-stone-700 text-sm leading-relaxed text-justify" />
                 </div>
 
               </div>
@@ -2013,15 +2000,15 @@ export default function App() {
                       </div>
 
                       <div className="space-y-4 leading-8">
-                        <p className="font-serif text-[#2C2C2C]/85 text-xs sm:text-sm md:text-base leading-relaxed text-justify">
-                          {selectedOutputUnit === 1 && "As our first collaborative activity, this was a truly rewarding experience! I was so impressed by how Karyl Cañete coordinated everything to keep us on track. Since we were juggling two different tasks that day, Karyl assigned specific roles so we could meet our deadlines. It felt wonderful to contribute meaningfully, and seeing how beautifully our infographic turned out really strengthened my trust in our teamwork! 🙂"}
-                          {selectedOutputUnit === 2 && "In this essay, I share my understanding of how we can use educational principles and standards to design lesson plans that integrate technology. My goal is to demonstrate how these methods enrich the learning experience, keep students engaged, and support academic success."}
-                          {selectedOutputUnit === 3 && "Formulating hands-on learning ecosystems. This collaborative laboratory resulted in visual student study guides and detailed cell biology instructional videos."}
-                          {selectedOutputUnit === 4 && "This activity introduced me to the ASSURE model using NotebookLM, and even though I was just watching the process, I had so much fun! We also used various technology tools like Kahoot, Google Forms, Plickers, ZipGrade, Quizizz, and Hot Potatoes, which made learning incredibly dynamic. Once again, technology and AI completely amazed me with their capabilities. It feels like these tools never stop evolving—just when you think you have seen everything, a new innovation appears. Seeing AI create an entire ASSURE model in seconds was incredible, making academic tasks feel so much easier and faster. I definitely plan to use NotebookLM in the future, as it is so important for future teachers to master these modern tools."}
-                          {selectedOutputUnit === 5 && "My teammate Karyl Cañete did an absolutely amazing job on this project! He is incredibly skilled, and the final output turned out wonderful. I found the infographic extremely helpful because it broke down complex social networking platforms in a simple, clear, and engaging way that was easy to learn from. I am so glad to have such a talented teammate and I really appreciate all of his hard work! 🙂"}
-                          {selectedOutputUnit === 6 && "I want to express my deepest gratitude to Faith Calunod for creating such an exceptional lesson plan—it was incredibly detailed and followed the official format to perfection. While reviewing it, I learned something entirely new about the assignment section: I used to think homework was always mandatory, but now I know it can be optional depending on the context and selected learning objectives. This experience showed me how critical an organized plan is for guiding future educators. A clear structure ensures students master their skills, and I am so grateful to Faith for her dedication! 🩷🩷"}
-                          {selectedOutputUnit === 7 && "Presenting my digital portfolio was a nerve-wracking experience. I felt overwhelmed and wished I had more time to practice. Even though the task was straightforward, speaking in front of an audience added a lot of pressure, and I worried my nerves got the best of me. Still, I am incredibly proud of myself for being brave, staying resilient, and not giving up. Even when time ran short and some classmates suggested I wrap it up early, I stayed determined to finish presenting my work. I will definitely be more mindful of time limits next time! I am also deeply grateful for Ma'am Rizalina's constructive feedback. Since her advice focused on my presentation style rather than the contents, it reassured me that I did a wonderful job with the portfolio itself. This experience taught me so much, and I am truly thankful for the opportunity to grow."}
-                        </p>
+                        <div className="font-serif text-[#2C2C2C]/85 text-xs sm:text-sm md:text-base leading-relaxed text-justify">
+                          {selectedOutputUnit === 1 && <FadeInText text="As our first collaborative activity, this was a truly rewarding experience! I was so impressed by how Karyl Cañete coordinated everything to keep us on track. Since we were juggling two different tasks that day, Karyl assigned specific roles so we could meet our deadlines. It felt wonderful to contribute meaningfully, and seeing how beautifully our infographic turned out really strengthened my trust in our teamwork! 🙂" />}
+                          {selectedOutputUnit === 2 && <FadeInText text="In this essay, I share my understanding of how we can use educational principles and standards to design lesson plans that integrate technology. My goal is to demonstrate how these methods enrich the learning experience, keep students engaged, and support academic success." />}
+                          {selectedOutputUnit === 3 && <FadeInText text="Formulating hands-on learning ecosystems. This collaborative laboratory resulted in visual student study guides and detailed cell biology instructional videos." />}
+                          {selectedOutputUnit === 4 && <FadeInText text="This activity introduced me to the ASSURE model using NotebookLM, and even though I was just watching the process, I had so much fun! We also used various technology tools like Kahoot, Google Forms, Plickers, ZipGrade, Quizizz, and Hot Potatoes, which made learning incredibly dynamic. Once again, technology and AI completely amazed me with their capabilities. It feels like these tools never stop evolving—just when you think you have seen everything, a new innovation appears. Seeing AI create an entire ASSURE model in seconds was incredible, making academic tasks feel so much easier and faster. I definitely plan to use NotebookLM in the future, as it is so important for future teachers to master these modern tools." />}
+                          {selectedOutputUnit === 5 && <FadeInText text="My teammate Karyl Cañete did an absolutely amazing job on this project! He is incredibly skilled, and the final output turned out wonderful. I found the infographic extremely helpful because it broke down complex social networking platforms in a simple, clear, and engaging way that was easy to learn from. I am so glad to have such a talented teammate and I really appreciate all of his hard work! 🙂" />}
+                          {selectedOutputUnit === 6 && <FadeInText text="I want to express my deepest gratitude to Faith Calunod for creating such an exceptional lesson plan—it was incredibly detailed and followed the official format to perfection. While reviewing it, I learned something entirely new about the assignment section: I used to think homework was always mandatory, but now I know it can be optional depending on the context and selected learning objectives. This experience showed me how critical an organized plan is for guiding future educators. A clear structure ensures students master their skills, and I am so grateful to Faith for her dedication! 🩷🩷" />}
+                          {selectedOutputUnit === 7 && <FadeInText text="Presenting my digital portfolio was a nerve-wracking experience. I felt overwhelmed and wished I had more time to practice. Even though the task was straightforward, speaking in front of an audience added a lot of pressure, and I worried my nerves got the best of me. Still, I am incredibly proud of myself for being brave, staying resilient, and not giving up. Even when time ran short and some classmates suggested I wrap it up early, I stayed determined to finish presenting my work. I will definitely be more mindful of time limits next time! I am also deeply grateful for Ma'am Rizalina's constructive feedback. Since her advice focused on my presentation style rather than the contents, it reassured me that I did a wonderful job with the portfolio itself. This experience taught me so much, and I am truly thankful for the opportunity to grow." />}
+                        </div>
                       </div>
                     </div>
 
